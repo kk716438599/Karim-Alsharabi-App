@@ -81,7 +81,7 @@ jobs:
               </application>
           </manifest>
           EOF
-
+          sed -i 's/android:label="كريم الشرعبي"/android:label="كريم الشرعبي" android:icon="@mipmap\/ic_launcher"/' app/src/main/AndroidManifest.xml
       - name: Build APK
         run: gradle :app:assembleDebug --no-daemon
 
