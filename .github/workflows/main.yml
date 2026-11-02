@@ -1,0 +1,21 @@
+name: Build Karim Alsharabi APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build APK
+        run: |
+          echo "Checking project files"
+          ls -la
+          mkdir -p app/src/main/assets
+          cp index.html app/src/main/assets/index.html
+          cp agency_logo.jpg app/src/main/assets/agency_logo.jpg
+          cp ic_launcher.png app/src/main/res/drawable/ic_launcher.png
